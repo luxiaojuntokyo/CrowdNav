@@ -103,7 +103,7 @@ class CADRL(Policy):
 
     def propagate(self, state, action):
         if isinstance(state, ObservableState):
-            # propagate state of humans
+            # propagate ObservableState of current agent
             next_px = state.px + action.vx * self.time_step
             next_py = state.py + action.vy * self.time_step
             next_state = ObservableState(next_px, next_py, action.vx, action.vy, state.radius)
